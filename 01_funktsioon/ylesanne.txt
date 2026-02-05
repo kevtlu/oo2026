@@ -1,0 +1,8 @@
+Andmestik sisendiks
+https://www.tlu.ee/~jaagup/andmed/ilm/harkutund.txt
+
+* Kuva programmi abil välja 1. andmereal olev õhuniiskus (RH1H)
+* Kuva jaanuarikuu sademete summa millimeetrites
+* Koosta alamprogramm. Sisendiks kuu number, väljundiks
+  selle kuu sademete summa. 
+  
