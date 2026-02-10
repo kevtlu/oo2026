@@ -1,5 +1,7 @@
-Omaloodud funktsioon
+Andmestik sisendiks
+https://www.tlu.ee/~jaagup/andmed/ilm/harkutund.txt
 
-Igaüks koostab temaatilise spetsiifilise funktsiooni ning demonstreerib selle tööd näitandmete abil.
-
-Arvutus võib olla lihtne, aga lugejatel/kuulajatel võiks käsitletava teema kohta midagi õppida olla.
+* Kuva programmi abil välja 1. andmereal olev õhuniiskus (RH1H)
+* Kuva jaanuarikuu sademete summa millimeetrites
+* Koosta alamprogramm. Sisendiks kuu number, väljundiks
+  selle kuu sademete summa. 
