@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script>
+            class Kilpkonn{
+                static suunad=[[1, 0], [0, 1], [-1, 0], [0, -1]]
+                suund = 0;
+                koef = 10;
+                constructor(x, y, g, peremees){
+                    this.x = x; this.y = y; this.g = g;
+                    this.peremees = peremees;
+                    this.peremees.joonista();
+                }
+                joonista(){
+                    this.g.fillRect(this.x * this.koef - this.koef / 2, this.y * this.koef - this.koef / 2, this.koef, this.koef);
+                    this.g.beginPath();
+                    this.g.moveTo(this.x * this.koef, this.y * this.koef);
+                    let s = Kilpkonn.suunad[this.suund];
+                    this.g.lineTo((this.x + s[0]) * this.koef, (this.y + s[1]) * this.koef);
+                    this.g.stroke();
+                }
+                tekstina(){
+                    return this.x + ", " + this.y + "; suund " + this.suund;
+                }
+                edasi(){
+                    let samm = Kilpkonn.suunad[this.suund];
+                    this.x += samm[0];
+                    this.y += samm[1];
+                    this.peremees.joonista();
+                }
+                paremale(){
+                    this.suund = (this.suund + 1) % Kilpkonn.suunad.length;
+                    this.peremees.joonista();
+                }
+            }
+
+            class Konnahaldus{
+                kilpkonnad = [];
+                g = tahvel.getContext("2d");
+                aktiivne = null;
+                lisaKilpkonn(x, y){
+                    let uus = new Kilpkonn(x, y, this.g, this)
+                    this.kilpkonnad.push(uus);
+                    this.aktiivne = this.kilpkonnad.length - 1;
+                    return uus;
+                }
+                joonista(){
+                    this.g.clearRect(0, 0, 600, 500);
+                    for(let k of this.kilpkonnad){
+                        k.joonista();
+                    }
+                }
+                edasi(){
+                    this.kilpkonnad[this.aktiivne].edasi();
+                }
+                paremale(){
+                    this.kilpkonnad[this.aktiivne].paremale();
+                }
+                vaheta(){
+                    this.aktiivne = ((this.aktiivne + 1) % this.kilpkonnad.length)
+                }
+            }
+
+            let kh;
+            function algus(){
+                kh = new Konnahaldus();
+                kh.lisaKilpkonn(3, 5);
+                kh.lisaKilpkonn(3, 8);
+            }
+            function liigu(){
+                kh.edasi();
+            }
+            function keera(){
+                kh.paremale();
+            }
+            function vaheta(){
+                kh.vaheta();
+            }
+        </script>
+    </head>
+    <body onload="algus()">
+      <span id="s1"></span>
+      <input type="button" value="liigu" onclick="liigu()" />
+      <input type="button" value="paremale" onclick="keera()" /><br />
+      <input type="button" value="vaheta" onclick="vaheta()" /><br />
+      <canvas id="tahvel" width="600" height="400"></canvas>
+    </body>
+</html>
