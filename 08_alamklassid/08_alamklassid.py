@@ -24,7 +24,7 @@ class Kortermaja(Elamupind):
         self.korterid = korterid
     
     def kirjeldus(self):
-        print(f"{self.nimi}: {self.korterid} korterit, {self.korruseid} korrust, {self.pindala}m²")
+        print(f"{self.nimi}: kortermaja, {self.korterid} korterit, {self.korruseid} korrust, {self.pindala}m²")
     
     def iseloom(self):
         return "kortermaja"
@@ -49,7 +49,7 @@ class Arihoone(Ehitis):
 
 def main():
     hooned = [
-        Kortermaja("Kortermaja", 5000, 9, 120),
+        Kortermaja("Kortermaja Mustamäel", 5000, 9, 120),
         Eramaja("Maja Nõmmel", 200, 2),
         Arihoone("Kaubanduskeskus", 15000, "kaubandus"),
         Arihoone("Kontoribüroo", 3000, "kontorid")
