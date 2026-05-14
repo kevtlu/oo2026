@@ -1,0 +1,21 @@
+funktsioon:
+arvuta / astenda
+math.random
++ saab korduvalt kasutada
+- käivitamine vanasti aeganõudev
+
+klass:
+private(turvalisus), public, protected, static
+- käivitamine vanasti aeganõudev
+
+klassikomplekt:
+mitmete klasside sidumine
+
+liides:
+annab mustrid teistele klassidele
+saab tõsta ühest kohast teise
+
+testid:
+seotud liidesega
+testimine / kontrollimine
+tarkvara töökindlus
