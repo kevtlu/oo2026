@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Takisti</title>
+    <script src="takisti1.js"></script>
+    <script>
+        let r1;
+        let r2;
+        function startPage(){
+           r1=new Resistor("Res1");  
+           r1.draw(canvas1.getContext("2d"), 10, 50);
+           r2=new Resistor("Res2");
+           r2.draw(canvas1.getContext("2d"), 50, 50);
+        }
+    </script>
+    <meta charset="utf-8">
+  </head>
+  <body onload="startPage()">
+      <canvas id="canvas1" width="400" height="100"></canvas><br />
+  </body>
+</html>
